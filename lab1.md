@@ -23,6 +23,7 @@ If you have not done so yet, use the password reset tool to reset your password 
 Now it's time to connect remotely using the VSCode terminal:
 * Go to VSCode and type this in the terminal: ssh cs15lwi23abc@ieng6.ucsd.edu
 * **Remember, replace cs15lwi23abc with your own username**
+* Enter yes when asked if "you want to continue connecting"
 * Enter your password when prompted
 * Success!
 <img width="500" alt="Screenshot 2023-01-11 at 2 28 37 PM" src="https://user-images.githubusercontent.com/44252902/211931824-27201daa-ec52-4698-9d16-1ec577194632.png">
