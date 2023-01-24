@@ -21,7 +21,7 @@ Write down the gray-boxed text that looks like with cs15lwi23abc where abc is re
 If you have not done so yet, use the password reset tool to reset your password (you can use your old password if it satisfies all the requirements)
 
 Now it's time to connect remotely using the VSCode terminal:
-* Go to VSCode and type this in the terminal: ssh cs15lwi23abc@ieng6.ucsd.edu
+* Go to VSCode and type this in the terminal: ```ssh cs15lwi23abc@ieng6.ucsd.edu```
 * **Remember, replace cs15lwi23abc with your own username**
 * Enter yes when asked if "you want to continue connecting"
 * Enter your password when prompted
@@ -31,12 +31,12 @@ Now it's time to connect remotely using the VSCode terminal:
 ## Step 3: Test Some Commands
 Now that you're connect, just treat this like being in any other directory.
 You can mess around with all your favorite commands - here are some examples:
-* cd
-* cat
-* pwd
-* ls
+* ```cd```
+* ```cat```
+* ```pwd```
+* ```ls```
 
-You can look at a list of usernames if you "% ls" after "% cd .."-ing to your home directory's parent directory:
+You can look at a list of usernames if you ```% ls``` after ```% cd ..```-ing to your home directory's parent directory:
 <img width="979" alt="Screenshot 2023-01-11 at 2 33 37 PM" src="https://user-images.githubusercontent.com/44252902/211932316-be2484db-6a76-404e-b0b3-ce8103ed907c.png">
 
 That's it!
