@@ -1,5 +1,38 @@
 # Lab Report 2
 
+## Part 2: Bug
+
+I chose the bug in the filter method.
+
+Failure inducing input:
+```
+@Test
+public void testFilter() {
+    List<String> input1 = Arrays.asList("a", "b");
+    StringChecker input2 = new StringChecker() {
+        public boolean checkString(String s) { return true; }
+    };
+
+    assertArrayEquals(new String[]{"a", "b"}, ListExamples.filter(input1, input2).toArray());
+}
+```
+
+Non-failure inducing input:
+```
+@Test
+public void testFilter2() {
+    List<String> input1 = Arrays.asList("a", "a");
+    StringChecker input2 = new StringChecker() {
+        public boolean checkString(String s) { return true; }
+    };
+
+    assertArrayEquals(new String[]{"a", "a"}, ListExamples.filter(input1, input2).toArray());
+}
+```
+
+
+<img width="1032" alt="Screenshot 2023-01-27 at 8 47 00 AM" src="https://user-images.githubusercontent.com/44252902/215144707-42599cb1-c96a-4744-b404-1f203530b054.png">
+
 ## Part 1: Simplest Search Engine
 
 Code:
