@@ -100,4 +100,4 @@ Using append rather than prepend fixes the error because since we loop through t
 
 ## Part 3: Something I learned
 
-One thing that I learned in lab 2 was that each port could only host 1 server on a machine and a different port number must be used if someone wanted to host 2 different servers at once.
+One thing that I learned in lab 2 was that each port could only host 1 server on a machine. This means that a different port number must be used if someone wanted to host 2 different servers at once. It also means that using a port number that is currently in use will not successfully run the server as intended. I learned about this when we had conflicts because everyone tried to use port:4000.
