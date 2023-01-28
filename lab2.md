@@ -1,5 +1,47 @@
 # Lab Report 2
 
+## Part 1: Web Server
+
+Example 1:
+
+<img width="768" alt="Screenshot 2023-01-27 at 3 58 04 PM" src="https://user-images.githubusercontent.com/44252902/215227482-d7c0883d-d4b3-4aab-adf0-3ee91ff75737.png">
+
+Method called:
+
+```
+handleRequest()
+```
+
+Arguments:
+
+```
+url = new URI("http://localhost:4002/add-message?s=first_stuff_added")
+```
+
+Values changed:
+
+The value of ```s``` changed from ```""``` to ```"first_stuff_added"```
+
+Example 2:
+
+<img width="744" alt="Screenshot 2023-01-27 at 3 58 36 PM" src="https://user-images.githubusercontent.com/44252902/215227525-01e4f4c0-c703-4919-9768-1041f80e9fbc.png">
+
+Method called:
+
+```
+handleRequest()
+```
+
+Arguments:
+
+```
+url = new URI("http://localhost:4002/add-message?s=more_adding")
+```
+
+Values changed:
+
+The value of ```s``` changed from ```"first_stuff_added"``` to ```"first_stuff_added\nmore_adding"```
+
 ## Part 2: Bug
 
 I chose the bug in the filter method.
@@ -30,88 +72,29 @@ public void testFilter2() {
 }
 ```
 
+Symptom:
 
-<img width="1032" alt="Screenshot 2023-01-27 at 8 47 00 AM" src="https://user-images.githubusercontent.com/44252902/215144707-42599cb1-c96a-4744-b404-1f203530b054.png">
+The output list had the right elements, but in reverse order.
+<img width="961" alt="Screenshot 2023-01-27 at 3 29 54 PM" src="https://user-images.githubusercontent.com/44252902/215224951-8cb4121a-8064-4fdd-bb69-9c5534984cb7.png">
 
-## Part 1: Simplest Search Engine
+Bug:
 
-Code:
+The list prepended the elements that passed the filter, rather than appending them as intended.
+
+Before
+
 ```
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-
-class Handler implements URLHandler {
-    ArrayList<String> arr = new ArrayList<>();
-
-    public String handleRequest(URI url) {
-        String query = url.getQuery();
-        if (query == null || !query.startsWith("s=")) return "Invalid Query!";
-        query = query.substring(2);
-        if (url.getPath().equals("/add")) {
-            if (arr.contains(query)) return "String already in list";
-            arr.add(query);
-            return String.format("Added %s to list", query);
-        } else if (url.getPath().equals("/search")) {
-            StringBuilder ret = new StringBuilder("Superstrings in list: ");
-            for (String s : arr) {
-                if (s.contains(query)) ret.append(s + ", ");
-            }
-            return ret.length() == 22 ? ret.toString() + "None" : ret.toString().substring(0, ret.length()-2);
-        } else {
-            return "Unknown Command! Try /add or /search instead";
-        }
-    }
-}
-
-class SearchEngine {
-    public static void main(String[] args) throws IOException {
-        if(args.length == 0){
-            System.out.println("Missing port number! Try any number between 1024 to 49151");
-            return;
-        }
-
-        int port = Integer.parseInt(args[0]);
-
-        Server.start(port, new Handler());
-    }
-}
+result.add(0, s);
 ```
 
-*The string ```"apple"``` was added beforehand to show that multiple elements can be returned by the ```search``` operation*
-### Add: ```http://localhost:4001/add?s=apples```
+After
 
-<img width="651" alt="Screenshot 2023-01-24 at 10 47 41 AM" src="https://user-images.githubusercontent.com/44252902/214381644-ec6b9b02-c2f5-4fcd-b1cf-18357ea9a59b.png">
+```
+result.add(s);
+```
 
-When this ```URI``` is entered, the ```handleRequest()``` method of a ```Handler``` is called.
+Using append rather than prepend fixes the error because since we loop through the original array in the forwards direction, we will encounter earlier elements before later elements, meaning any element that we want to add should come after all previously added elements.
 
-The ```URI```, with ```path="/add"``` and ```query="s=apples"```, is passed in as an argument, and the method recognizes this as an ```add``` operation, 
-adding the query substring ```"apples"``` to the instance variable ```arr```
+## Part 3: Something I learned
 
-Through this operation, the value of ```arr``` changes from ```{"apple"}``` to ```{"apple", "apples"}```
-
-
-
-### Invalid Query: ```http://localhost:4001/add?a=apples```
-
-<img width="645" alt="Screenshot 2023-01-24 at 10 48 33 AM" src="https://user-images.githubusercontent.com/44252902/214381811-fdb35b7b-d13f-4162-b461-09d96b6b9aa8.png">
-
-When this ```URI``` is entered, the ```handleRequest()``` method of a ```Handler``` is called.
-
-The ```URI```, with ```path="/add"``` and ```query="a=apples"```, is passed in as an argument, and the method realizes that the query string is 
-invalid because it doesn't start with ```"s="```
-
-This causes the method to return ```"Invalid Query!"``` as the string to display without changing the value of any instance variables.
-
-
-
-### Search: ```http://localhost:4001/search?s=ple```
-
-<img width="638" alt="Screenshot 2023-01-24 at 10 50 10 AM" src="https://user-images.githubusercontent.com/44252902/214382172-65e1a293-cc48-4fd8-9701-ecc7979250b5.png">
-
-When this ```URI``` is entered, the ```handleRequest()``` method of a ```Handler``` is called.
-
-The ```URI```, with ```path="/search"``` and ```query="s=ple"```, is passed in as an argument, and the method recognizes this as an 
-```search``` operation, searching through the instance variable ```arr``` to find and concatenate any strings containing the string ```"ple"```
-
-The method then returns the concatenated string, without changing the value of any instance variables.
+One thing that I learned in lab 2 was that each port could only host 1 server on a machine and a different port number must be used if someone wanted to host 2 different servers at once.
