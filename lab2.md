@@ -75,7 +75,10 @@ public void testFilter2() {
 Symptom:
 
 The output list had the right elements, but in reverse order.
-<img width="961" alt="Screenshot 2023-01-27 at 3 29 54 PM" src="https://user-images.githubusercontent.com/44252902/215224951-8cb4121a-8064-4fdd-bb69-9c5534984cb7.png">
+
+<img width="1033" alt="Screenshot 2023-01-27 at 4 07 20 PM" src="https://user-images.githubusercontent.com/44252902/215228242-ab559fe2-b973-4850-b691-f5971c1b4bb6.png">
+
+<img width="1030" alt="Screenshot 2023-01-27 at 4 07 40 PM" src="https://user-images.githubusercontent.com/44252902/215228274-e0d741b2-5e76-4ae4-bd84-f9fbf94a65d3.png">
 
 Bug:
 
