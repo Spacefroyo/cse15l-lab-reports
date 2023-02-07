@@ -97,9 +97,9 @@ Symptom:
 
 The output list had the right elements, but in reverse order.
 
-<img width="1033" alt="Screenshot 2023-01-27 at 4 07 20 PM" src="https://user-images.githubusercontent.com/44252902/215228242-ab559fe2-b973-4850-b691-f5971c1b4bb6.png">
+<img width="1034" alt="Screenshot 2023-02-07 at 1 13 31 PM" src="https://user-images.githubusercontent.com/44252902/217366855-9bbd5278-b962-4117-bd4d-64429d979edc.png">
 
-<img width="1030" alt="Screenshot 2023-01-27 at 4 07 40 PM" src="https://user-images.githubusercontent.com/44252902/215228274-e0d741b2-5e76-4ae4-bd84-f9fbf94a65d3.png">
+<img width="822" alt="Screenshot 2023-02-07 at 1 14 05 PM" src="https://user-images.githubusercontent.com/44252902/217366955-5071dd53-3f84-4024-92c9-bf0c9f0b86bf.png">
 
 Bug:
 
