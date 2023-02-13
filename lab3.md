@@ -3,6 +3,8 @@
 Researching the ```find``` command. This command finds all files and directories matching a specified criteria within the given directory. 
 The following are flags that specify that criteria.
 
+Source: https://www.redhat.com/sysadmin/linux-find-command
+
 ## Empty
 
 Example 1:
