@@ -2,6 +2,36 @@
 
 Remotely modifying a GitHub repository
 
+## Step 1
+
+Click on the Settings tab of your previous fork.
+
+<img width="999" alt="Screenshot 2023-02-23 at 12 00 21 PM" src="https://user-images.githubusercontent.com/44252902/221017092-bf2e2fd4-e3f5-447d-b94b-7762f90f78bf.png">
+
+Scroll down and click "Delete this repository"
+
+<img width="787" alt="Screenshot 2023-02-23 at 12 02 29 PM" src="https://user-images.githubusercontent.com/44252902/221017478-16e5e93b-5055-4158-9fe4-6ebb35bdbaf0.png">
+
+Type in the confirmation message and click "I understand the consequences, delete this repository"
+
+<img width="472" alt="Screenshot 2023-02-23 at 12 03 41 PM" src="https://user-images.githubusercontent.com/44252902/221017898-be60d4ce-029c-4027-a483-3ae230f1f5e6.png">
+
+## Step 2
+
+Go to [this repository](https://github.com/ucsd-cse15l-w23/lab7) and click fork.
+
+<img width="1281" alt="Screenshot 2023-02-23 at 12 08 04 PM" src="https://user-images.githubusercontent.com/44252902/221018606-272e0375-040c-4ee4-b420-0f58f471eafb.png">
+
+Click Create fork.
+
+<img width="735" alt="Screenshot 2023-02-23 at 12 09 03 PM" src="https://user-images.githubusercontent.com/44252902/221018791-df7b9515-27d8-4d59-b81c-fdc718c5e42c.png">
+
+## Step 3
+
+Search "Stopwatch" on google and click start when ready.
+
+<img width="883" alt="Screenshot 2023-02-23 at 12 10 16 PM" src="https://user-images.githubusercontent.com/44252902/221018994-43e9dad5-f5a8-4aef-9c0d-f0531ee52614.png">
+
 ## Step 4
 
 <img width="535" alt="Screenshot 2023-02-23 at 11 12 27 AM" src="https://user-images.githubusercontent.com/44252902/221006898-997f7f0d-c2ba-4ebc-8d58-761f5a0ee67b.png">
